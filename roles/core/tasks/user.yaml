@@ -1,0 +1,16 @@
+---
+- name: Create user group
+  group: name={{ user.group }} state=present
+  tags:
+    - user
+
+- name: Create user and assign to groups
+  user: name={{ user.name }} group={{ user.group }} shell={{ user.shell }} update_password=on_create uid={{ user.uid }} groups=wheel append=yes
+  tags:
+    - user
+
+- name: Configure authorized keys
+  authorized_key: user={{ user.name }} key="{{ lookup('file', 'id_rsa.pub') }}"
+  ignore_errors: True
+  tags:
+    - user

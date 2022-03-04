@@ -1,0 +1,35 @@
+user:
+    name: dcutting
+    fullname: David Cutting
+    uid: 1000
+    group: dcutting
+    shell: /bin/bash
+
+timezone: America/Detroit
+locale: us_EN.UTF-8
+keymap: us
+
+hostname: m1lkyw4y
+
+dotfiles:
+    url: git@github.com:dcutting133/dotfiles.git
+    destination: .config/dotfiles
+
+ssh:
+    port: 22
+    user_key: /home/dcutting/.ssh/id_rsa
+    enable_sshd: False
+
+home_layout:
+    - bin
+    - code
+    - tmp
+
+core_utils:
+    - bash
+    - bash-completion
+    - rsync
+    - git
+    - sudo
+    - vim
+    - openssh

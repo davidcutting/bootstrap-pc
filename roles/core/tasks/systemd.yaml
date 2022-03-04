@@ -1,0 +1,7 @@
+---
+- name: Enable dhcpcd
+  systemd: daemon_reload=yes name=dhcpcd enabled=yes
+  become: yes
+  tags:
+    - core
+    - systemd

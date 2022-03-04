@@ -1,0 +1,10 @@
+---
+- name: Set the hostname
+  hostname: name={{ hostname }}
+  when: hostname is defined
+
+- include: user.yaml
+- include: sudo.yaml
+- include: packages.yaml
+- include: systemd.yaml
+- include: home.yaml
